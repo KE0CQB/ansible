@@ -1,0 +1,17 @@
+---
+- name: Update Ubuntu Servers
+  hosts: Ubuntu
+  become: yes
+  tasks:
+    - apt:
+        update_cache: yes
+        upgrade: full
+        autoremove: yes
+- name: Update Rocky
+  hosts: Rocky
+  become: yes
+  tasks:
+    - dnf:
+        update_cache: yes
+        name: "*"
+        state: latest
