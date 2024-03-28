@@ -1,9 +1,13 @@
 ---
 
-- hosts: redhat
+- hosts: all
   become: true
   tasks:
 
   - name: install apache package
     dnf:
-      name: httpd
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_distribution == "Rocky"
