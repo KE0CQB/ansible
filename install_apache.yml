@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: Web-host
   become: true
   tasks:
 
@@ -11,3 +11,8 @@
         - php
       state: latest
     when: ansible_distribution == "Rocky"
+
+  - name: restart httpd
+    systemd:
+      name: httpd
+      state: restarted

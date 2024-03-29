@@ -1,12 +1,12 @@
 ---
 
-- hosts: redhat
+- hosts: Web-host
   become: true
   tasks:
 
-  - name: un-install apache package
+  - name: uninstall httpd server
     dnf:
-      name: 
+      name:
         - httpd
         - php
       state: absent
