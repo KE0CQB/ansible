@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: create dawson user
+    user:
+      name: dawson
+
+  -name: add ssh key
+   authorized_key:
+           user: dawson
+           key:"      
+
