@@ -1,0 +1,15 @@
+---
+- name: Install Apache
+  host: Web-site
+
+  tasks:
+    - name: Install Apache
+      dnf:
+        name:
+          - httpd
+        state: present
+
+
+    - name: Start Apache
+
+

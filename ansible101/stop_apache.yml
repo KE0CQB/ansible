@@ -1,0 +1,10 @@
+---
+- name: Stop Apache 
+  hosts: Web_host
+  tasks:
+    - name: Stop Apache
+      service:
+        name: httpd
+        state: stopped
+
+
